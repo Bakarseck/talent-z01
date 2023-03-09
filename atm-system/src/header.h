@@ -7,7 +7,9 @@
 
 struct Date
 {
-    int month, day, year;
+    int month;
+    int day;
+    int year;
 };
 
 // all fields for each record of an account
@@ -25,6 +27,9 @@ struct Record
     struct Date withdraw;
 };
 
+// manage the amount
+double deposit(double amountDeposited, Record record) ;
+double withDraw(double amountWithDrawed, Record record) ;
 
 struct User
 {
@@ -33,8 +38,7 @@ struct User
     char password[50];
 };
 
-//typeDef the structs
-
+// typeDef the structs
 typedef struct User User ;
 typedef struct Date Date ;
 typedef struct Record Record ;
@@ -42,11 +46,18 @@ typedef struct Record Record ;
 // authentication functions
 void loginMenu(char a[50], char pass[50]);
 void registerMenu(char a[50], char pass[50]);
-const char *getPassword(struct User u);
+const char *getPassword(User newUser);
+
+// The functions of the managing atm-managing
+void registerNewUser() ;
+void updateInformation() ;
+void updateCountry(int id) ;
+void checkingDetailsAccount(int id) ;
+
 
 // system function
-void createNewAcc(struct User u);
-void mainMenu(struct User u);
-void checkAllAccounts(struct User u);
+void createNewAcc(User newUser);
+void mainMenu(User newUser);
+void checkAllAccounts(User newUser);
 
 #endif

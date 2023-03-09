@@ -1,6 +1,6 @@
 #include "header.h"
 
-void mainMenu(struct User u)
+void mainMenu(User newUser)
 {
     int option;
     system("clear");
@@ -19,7 +19,7 @@ void mainMenu(struct User u)
     switch (option)
     {
     case 1:
-        createNewAcc(u);
+        createNewAcc(newUser);
         break;
     case 2:
         // student TODO : add your **Update account information** function
@@ -30,7 +30,7 @@ void mainMenu(struct User u)
         // here
         break;
     case 4:
-        checkAllAccounts(u);
+        checkAllAccounts(newUser);
         break;
     case 5:
         // student TODO : add your **Make transaction** function
@@ -52,7 +52,7 @@ void mainMenu(struct User u)
     }
 };
 
-void initMenu(struct User *u)
+void initMenu(User *newUser)
 {
     int r = 0;
     int option;
@@ -68,8 +68,8 @@ void initMenu(struct User *u)
         switch (option)
         {
         case 1:
-            loginMenu(u->name, u->password);
-            if (strcmp(u->password, getPassword(*u)) == 0)
+            loginMenu(newUser -> name, u -> password);
+            if (strcmp(u -> password, getPassword(*newUser)) == 0)
             {
                 printf("\n\nPassword Match!");
             }
@@ -96,9 +96,9 @@ void initMenu(struct User *u)
 
 int main()
 {
-    struct User u;
+    User newUser ;
     
-    initMenu(&u);
-    mainMenu(u);
+    initMenu(&newUser);
+    mainMenu(newUser);
     return 0;
 }

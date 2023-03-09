@@ -5,6 +5,7 @@ char *USERS = "./data/users.txt";
 
 void loginMenu(char a[50], char pass[50])
 {
+    
     struct termios oflags, nflags;
 
     system("clear");
@@ -34,7 +35,7 @@ void loginMenu(char a[50], char pass[50])
     }
 }
 
-const char *getPassword(struct User u)
+const char *getPassword(User newUser)
 {
     FILE *fp;
     struct User userChecker;
