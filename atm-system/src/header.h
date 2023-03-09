@@ -1,3 +1,6 @@
+#ifndef HEADER_H
+#define HEADER_H
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -22,12 +25,19 @@ struct Record
     struct Date withdraw;
 };
 
+
 struct User
 {
     int id;
     char name[50];
     char password[50];
 };
+
+//typeDef the structs
+
+typedef struct User User ;
+typedef struct Date Date ;
+typedef struct Record Record ;
 
 // authentication functions
 void loginMenu(char a[50], char pass[50]);
@@ -38,3 +48,5 @@ const char *getPassword(struct User u);
 void createNewAcc(struct User u);
 void mainMenu(struct User u);
 void checkAllAccounts(struct User u);
+
+#endif

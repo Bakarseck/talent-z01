@@ -13,6 +13,7 @@ void loginMenu(char a[50], char pass[50])
 
     // disabling echo
     tcgetattr(fileno(stdin), &oflags);
+
     nflags = oflags;
     nflags.c_lflag &= ~ECHO;
     nflags.c_lflag |= ECHONL;
